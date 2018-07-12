@@ -1,0 +1,24 @@
+body{
+  margin: 0px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+#canvas{
+  background:#eee;
+  display: block
+}
+.actions{
+  position: fixed;
+  top: 10px;
+  left: 10px;
+}
+.actions > #brush{
+  display: none;
+}
+
+.actions.x > #brush{
+  display: inline-block;
+}
+.actions.x > #eraser{
+  display: none;
+}
