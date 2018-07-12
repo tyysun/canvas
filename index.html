@@ -3,23 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>我的画板</title>
   <link rel="stylesheet" href="./canvas.css">
+   
+  <script src="//at.alicdn.com/t/font_745171_4j81pei2hwe.js"></script>
+ 
 </head>
 <body>
-<canvas id="canvas" width="300px" height="300px"></canvas>
+    <canvas id="canvas" width="300px" height="300px"></canvas>
 <div  class="actions">
-  <button id="eraser">启用橡皮擦</button>
-  <button id="brush">启用画笔</button>
+    <svg class="icon" id="pen">
+        <use xlink:href="#icon-bi"></use>
+    </svg>
+    <svg class="icon active" id="eraser">
+        <use xlink:href="#icon-xiangpi"></use>
+    </svg>
+    
+    <svg class="icon" id="download">
+        <use xlink:href="#icon-download"></use>
+    </svg>
+    <svg class="icon" id="clear" >
+        <use xlink:href="#icon-shanchu"></use>
+    </svg>
+  
 
 </div>
 
+<ol class="colors">
+  <li class="color active"></li>
+  <li class="color"></li>
+  <li class="color"></li>
+  <li class="color"></li>
+  <li class="color"></li>
+  <li class="color"></li>
+  <li class="color"></li>
+  <li class="color"></li>
+</ol>
+<ol class="sizes">
+  <li class="size"></li>
+  <li class="size active"></li>
+  <li class="size"></li>
+</ol>
 
+<script src="./index.js"></script> 
 
-
-<script src="./index.js"> 
-
-</script>  
 </body>
 </html>

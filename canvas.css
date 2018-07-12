@@ -1,24 +1,97 @@
-body{
-  margin: 0px;
+ul,ol{
+  list-style: none
+}
+*{
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+}
+.icon {
+  width: 1em; height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
   overflow: hidden;
+  
 }
 #canvas{
-  background:#eee;
-  display: block
-}
-.actions{
+  display: block;
   position: fixed;
-  top: 10px;
-  left: 10px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
-.actions > #brush{
-  display: none;
+body{
+  overflow: hidden;
 }
 
-.actions.x > #brush{
-  display: inline-block;
+
+
+
+.actions{
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 15px;
 }
-.actions.x > #eraser{
-  display: none;
+.actions svg{
+  width: 1.5em;
+  height: 1.5em;
+  margin: 10px;
+  transition: all 0.4s
+  
+}
+.actions #clear{
+  
+  position: fixed;
+  top:15px;
+  right: 5px;
+  
+}
+.actions svg.active{
+  fill:red;
+  transform: scale(1.3);
+}
+.colors{
+  position: fixed;
+  top:60px;
+  left: 13px;
+  
+}
+.colors li{
+  width:20px;
+  height: 20px;
+  /* box-shadow:0 0 3px rgba(0,0,0,0.35); */
+  transition: all 0.4s;
+  border-radius: 50%;
+  margin: 20px 10px;
+}
+.sizes{
+  position: fixed;
+  top:438px;
+  left: 13px;
+  
+}
+.sizes li{
+  /* width:10px;
+  height:10px; */
+  /* box-shadow:0 0 3px rgba(0,0,0,0.35); */
+  transition: all 0.4s;
+  border-radius: 50%;
+  margin: 20px 10px;
+  background: #000;
+
+}
+
+.colors > li.active{
+ 
+  
+  box-shadow:4 4 10px rgba(0,0,0,0.95);
+  transform: scale(1.3);
+}
+.sizes > li.active{
+ 
+  
+  border:2px solid #FF0033
+  
 }
