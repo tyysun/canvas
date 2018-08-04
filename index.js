@@ -62,7 +62,7 @@
         var y = e.touches[0].clientY
         using = true
         if (eraserEnabled) {
-          ctx.clearRect(x - 5, y - 5, 10, 10)
+          ctx.clearRect(x - 10, y - 10, 20, 20)
         } else {
 
           lastPoint = { x, y }
@@ -73,7 +73,7 @@
         let y = e.touches[0].clientY
         if (using) {
           if (eraserEnabled) {
-            ctx.clearRect(x - 5, y - 5, 10, 10)
+            ctx.clearRect(x - 10, y - 10, 20, 20)
           } else {
             var newPoint = { x, y }
             drawCircle(x, y, penwidth / 2)
@@ -93,7 +93,7 @@
         
         using = true
         if (eraserEnabled) {
-          ctx.clearRect(x - 5, y - 5, 20, 20)
+          ctx.clearRect(x - 10, y - 10, 20, 20)
         } else {
 
           lastPoint = { x, y }
@@ -105,7 +105,7 @@
         let y = e.clientY
         if (using) {
           if (eraserEnabled) {
-            ctx.clearRect(x - 5, y - 5, 10, 10)
+            ctx.clearRect(x - 10, y - 10, 20, 20)
           } else {
             let newPoint = { x, y }
             drawCircle(x, y, penwidth / 2)
