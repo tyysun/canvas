@@ -3,12 +3,16 @@
 
   var canvas = document.getElementById('canvas');
   var ctx = canvas.getContext('2d');
-  var eraserEnabled = true
-  resetWindow()
+  var eraserEnabled = false
 
+
+  resetWindow()
+ 
   window.onresize = function () {
     resetWindow()
   }
+
+  setCanvasBg();
   
 
 
@@ -24,6 +28,7 @@
   }
   clear.onclick = function () {
     ctx.clearRect(0, 0, canvas.width, canvas.height)
+    setCanvasBg();
   }
   download.onclick = function () {
     var name = prompt('输入图片名称');
@@ -36,15 +41,22 @@
     }
   }
 
-
+  function setCanvasBg() {
+    ctx.fillStyle = "white";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+   
+    // console.log(ctx.fillStyle)
+}
   function listionToUser() {
     //按下鼠标
     var using = false
     var lastPoint = { x: undefined, y: undefined }
-
+    //特性检测
     if (document.body.ontouchstart !== undefined) {
       //触屏
       canvas.ontouchstart = function (e) {
+
+        
 
         var x = e.touches[0].clientX
         var y = e.touches[0].clientY
@@ -78,6 +90,7 @@
       canvas.onmousedown = function (e) {
         var x = e.clientX
         var y = e.clientY
+        
         using = true
         if (eraserEnabled) {
           ctx.clearRect(x - 5, y - 5, 20, 20)
@@ -137,11 +150,11 @@
 
     lis[i].style.width = pensize[i]
     lis[i].style.height = pensize[i]
-    console.log(lis[i])
+   
     lis[i].onclick = function () {
       ctx.lineWidth = ps[i]
        penwidth = ctx.lineWidth
-      console.log(penwidth)
+      
       for (let i = 0; i < lis.length; i++) {
         lis[i].classList.remove('active')
       }
@@ -158,13 +171,13 @@
   }
   function drawCircle(x, y, radius) {
     ctx.beginPath()
-    // ctx.fillStyle
+    ctx.fillStyle
     ctx.arc(x, y, radius, 0, Math.PI * 2)
     ctx.fill()
   }
   function drawLine(x1, y1, x2, y2) {
     ctx.beginPath()
-    // ctx.strokeStyle = 'black'
+    ctx.strokeStyle 
     ctx.lineCap = "round";
     ctx.lineJoin = "round";
     ctx.moveTo(x1, y1)
@@ -174,3 +187,6 @@
     ctx.closePath()
   }
 
+
+ 
+ 
