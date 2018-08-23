@@ -1,4 +1,4 @@
-# canvas画板   
+# 墨痕画板   
 
 接触canvas,使用canvas制作的一个简洁的画板   
 
